@@ -82,6 +82,7 @@ body {
   background-position: center;
   height: 100vh;
   width: 100%;
+  
 }
 
 .hero_area .slick_main .main-img-box.b1 {
@@ -95,6 +96,7 @@ body {
 .hero_area .slick_main .main-img-box.b3 {
   background-image: url(../images/5.jpg);
 }
+
 
 .sub_page .hero_area {
   height: auto;
@@ -175,8 +177,9 @@ a:focus {
 }
 
 .navbar .navbar-brand img {
-  width: 90px;
+  width: 170px;
   margin-right: 5px;
+  
 }
 
 .custom_nav-container {
@@ -245,7 +248,7 @@ a:focus {
   opacity: 0.7;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: none; /* flex if you want to show the logo on top of the pics */
+  display: none ;     /* flex if you want to show the logo on top of the pics */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: start;
@@ -362,6 +365,7 @@ a:focus {
 }
 
 .slider_section .slider_content .img_container .slick_slider-nav {
+  margin-top: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
