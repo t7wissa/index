@@ -121,6 +121,7 @@
   }
 
   .slider_section .slider_content .img_container .slick_slider-nav .img-box {
+    opacity: 0;
     max-width: 75px;
     min-width: 75px;
   }
