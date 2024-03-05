@@ -92,20 +92,13 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="portfolio.html">Portfolio </a>
-                </li>
+                
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact us</a>
                 </li>
                 
               </ul>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
+             
             </div>
           </div>
         </nav>
@@ -347,10 +340,7 @@
 
   <!-- client section -->
 
-  <section class="client_section layout_padding">
-
   
-  </section>
 
   <!-- end client section -->
 
@@ -372,29 +362,9 @@
         </h2>
       </div>
     </div>
+    
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <form action="">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" placeholder="Phone Number" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
         <div class="col-md-6">
           <div class="img-box">
             <img src="images/17.jpg" alt="">
@@ -410,6 +380,29 @@
             </div>
           </div>
         </div>
+        
+        <div class="col-md-6">
+          <form method="post" action="send.php">
+            <div>
+              <input  name="name" type="text" placeholder="Name" />
+            </div>
+            <div>
+              <input name="mail" type="email" placeholder="Email" />
+            </div>
+            <div>
+              <input name="phone" type="text" placeholder="Phone Number" />
+            </div>
+            <div>
+              <input name="message" type="text" class="message-box" placeholder="Message" />
+            </div>
+            <div class="d-flex ">
+              <button>
+                SEND
+              </button>
+            </div>
+          </form>
+        </div>
+     
       </div>
     </div>
   </section>
@@ -426,8 +419,7 @@
               <img src="images/favicon_smal.png" alt="">
             </a>
             <p>
-              It is a long established fact that a reader will be distracted by the readable content of a page when
-              looking at its layout. The point of
+             Travel with us
             </p>
           </div>
         </div>
@@ -442,16 +434,8 @@
                   Home
                 </a>
               </li>
-              <li>
-                <a href="about.html">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="portfolio.html">
-                  Portfolio
-                </a>
-              </li>
+              
+              
               <li>
                 <a href="contact.html">
                   Contact Us
@@ -543,9 +527,46 @@
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
   <!-- end google map js -->
 
-
+  <script>
+    const constraints = {
+        name: {
+            presence: { allowEmpty: false }
+        },
+        email: {
+            presence: { allowEmpty: false },
+            email: true
+        },
+        message: {
+            presence: { allowEmpty: false }
+        }
+    };
+ 
+    const form = document.getElementById('contact-form');
+ 
+    form.addEventListener('submit', function (event) {
+      const formValues = {
+          name: form.elements.name.value,
+          email: form.elements.email.value,
+          message: form.elements.message.value
+      };
+ 
+      const errors = validate(formValues, constraints);
+ 
+      if (errors) {
+        event.preventDefault();
+        const errorMessage = Object
+            .values(errors)
+            .map(function (fieldValues) { return fieldValues.join(', ')})
+            .join("\n");
+ 
+        alert(errorMessage);
+      }
+    }, false);
+ </script>
+ 
   <script>
     $('.slider-for').slick({
       autoplay: true,
